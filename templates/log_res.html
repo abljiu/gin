@@ -1,13 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Result</title>
+    <meta charset="utf-8" />
+    <title>学生管理系统</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+        }
+
+        body {
+            background: url(../img/wallhaven-4d38m0.jpg);
+            background-repeat: repeat;
+            background-position: right;
+        }
+
+        #container {
+            padding: 10px;
+            margin: 0 auto;
+            width: 80%;
+            height: 100%;
+        }
+
+        .top {
+            background-image: url();
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .nav {
+            background-image: url(../img/wallhaven-4d38m0.jpg);
+            padding: 1.25rem;
+        }
+
+        .conter {
+            padding: 10px 10%;
+            background-color: rgba(247, 173, 173, 0.8);
+            filter: grayscale(50%);
+        }
+
+        .conter_up {
+            text-decoration: none;
+            color: rgb(15, 3, 1);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+            padding-bottom: 20px;
+        }
+
+        .conter_middle table {
+            border: 1px solid;
+            text-align: center;
+            width: 100%;
+            font-size: 1.5rem;
+            letter-spacing: 0.1rem;
+            border: 2px solid black;
+        }
+
+        .conter_middle td,
+        th {
+            border: 1px solid #6e6767;
+            height: 45px;
+        }
+
+        .conter_middle a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .conter_down {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .conter_down>* {
+            margin-right: 8px;
+        }
+
+        .foot {
+            padding: 20px;
+            margin-bottom: 50px;
+            color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
+
 <body>
-    <h2>Login Result</h2>
-    <p>Username: {{ .username }}</p>
-    <p>Password: {{ .password }}</p>
+    <div id="container">
+        <div class="top">
+            欢迎进入学生管理信息平台
+        </div>
+        <div class="conter">
+            <div class="conter_up">
+                学员信息列表
+            </div>
+            <div class="conter_middle">
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>姓名</th>
+                            <th>密码</th>
+                            <th>昵称</th>
+                            <th>年龄</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>                        <tr>
+                            <td>8</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>                        <tr>
+                            <td>9</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>                        <tr>
+                            <td>10</td>
+                            <td>小明</td>
+                            <td>admin</td>
+                            <td>小明同学</td>
+                            <td>20</td>
+                            <td><a href="#">删除</a> <a href="#">修改</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="conter_down">
+                <span>共5页</span>
+                <input type="button" name="" id="" value="上一页" />
+                <select name="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <input type="button" name="" id="" value="下一页" />
+            </div>
+            <div class="foot">
+                © 2024 西安邮电大学. All rights reserved.
+            </div>
 </body>
+
 </html>
