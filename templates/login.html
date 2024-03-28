@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN   ">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学生管理系统登陆界面</title>
+    <title>登陆界面</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url(../img/wallhaven-4d38m0.jpg);
+            /* background: url(../img/wallhaven-4d38m0.jpg); */
             background-repeat: repeat;
             background-position: right;
         }
@@ -29,7 +29,7 @@
 
         .login-container h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .form-group {
@@ -63,20 +63,12 @@
             background-color: #0056b3;
         }
     </style>
-    <script>
-        function login() {
-            // 在此处添加验证登录逻辑
-
-            // 假设登录成功后进行页面跳转
-            window.location.href = "./log_res.html";
-        }
-    </script>
 </head>
 
 <body>
     <div class="login-container">
-        <h2>学生管理系统登陆界面</h2>
-        <form>
+        <h2>学生管理系统</h2>
+        <form action="/login" method="post">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -86,7 +78,7 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <button type="button" onclick="login()">Login</button>
+                <button type="submit">Login</button>
             </div>
         </form>
     </div>
