@@ -2,6 +2,7 @@ package Database
 
 import (
 	"database/sql"
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -9,11 +10,15 @@ var db *sql.DB
 
 // 初始化数据库
 func InitDB() (err error) {
-	db, err = sql.Open("mysql", "root:root@tcp(localhost:3306)/abljiu")
+	db, err = sql.Open("mysql", "abljiu:123456@tcp(localhost:3306)/my_data")
 	if err != nil {
 		return err
 	}
 	defer db.Close()
+	err = db.Ping()
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
