@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gin/Database"
+	"gin/database"
 	"log"
 	"net/http"
 
@@ -18,11 +18,11 @@ func main() {
 		ctx.HTML(http.StatusOK, "start.html", nil)
 	})
 	//初始化数据库
-	err := Database.InitDB()
+	err := database.InitDB()
 	if err != nil {
-		log.Fatal("初始化数据库失败！")
+		log.Fatal("初始化数据库失败:", err)
 	}
-	
+
 	//请求 POST /register 时，接受数据
 	r.POST("/start", func(c *gin.Context) {
 
