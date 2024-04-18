@@ -14,7 +14,7 @@ type User struct {
 	age  int
 }
 
-// 初始化数据库
+// InitDB 初始化数据库
 func InitDB() (err error) {
 	db, err = sql.Open("mysql", "abljiu:123456@tcp(localhost:3306)/my_data")
 	if err != nil {
@@ -47,26 +47,25 @@ func insertRow(newUser User) {
 	fmt.Println("插入成功，id为：", newID)
 }
 
-// 添加新用户
+// AddUser 添加新用户
 func AddUser() bool {
 
 	return false
 }
 
-// 删除用户
+// DeleteUser 删除用户
 func DeleteUser() bool {
 	return false
 }
 
-// 查询用户密码
+// InquirePwd 查询用户密码
 func InquirePwd(Username string) string {
 	pwd := ""
 	return pwd
 }
 
-// 校验用户的密码
+// CheckPwd 校验用户的密码
 func CheckPwd(Username string) bool {
+
 	return false
 }
-
-//
