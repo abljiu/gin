@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	//创建server
 	r := gin.Default()
 	r.LoadHTMLGlob("./templates/*")
@@ -29,10 +30,30 @@ func main() {
 		//
 	})
 
+	r.GET("/:name/:age", func(c *gin.Context) {
+		name := c.Param("name")
+		age := c.Param("age")
+
+		c.JSON(http.StatusOK, gin.H{
+			"name": name,
+			"age":  age,
+		})
+	})
+
+	r.GET("/blog/:year/:month", func(c *gin.Context) {
+		year := c.Param("year")
+		month := c.Param("month")
+
+		c.JSON(http.StatusOK, gin.H{
+			"month": month,
+			"year":  year,
+		})
+	})
+
 	//请求 POST /login 时，接收数据
 	r.POST("/login", func(c *gin.Context) {
 		// 使用 c.PostForm() 方法获取表单提交的数据
-		// username := c.PostForm("username")
+		//username := c.PostForm("username")
 		// password := c.PostForm("password")
 
 		//校验用户信息

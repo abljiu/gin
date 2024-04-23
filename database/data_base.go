@@ -3,29 +3,31 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	_ "github.com/go-sql-driver/mysql"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 )
 
 var db *sql.DB
 
 type User struct {
-	id   int
-	name string
-	age  int
+	Id   int
+	Name string
+	Age  int
 }
 
 // InitDB 初始化数据库
 func InitDB() (err error) {
-	db, err = sql.Open("mysql", "abljiu:123456@tcp(localhost:3306)/my_data")
-	if err != nil {
-		return err
-	}
-	defer db.Close()
-	err = db.Ping()
+
+	dsn := "abljiu:123456@tcp(localhost:3306)/my_data?charset=utf8mb4&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return err
 	}
 
+	err = db.AutoMigrate(&User{})
+	if err != nil {
+		return err
+	}
 	return nil
 }
 
@@ -33,7 +35,7 @@ func insertRow(newUser User) {
 	//需要插入的sql语句，？表示占位参数
 	sqlStr := "insert into user(name,age) values(?,?)"
 	//把user结构体的name、age字段依次传给sqlStr的占位参数
-	ret, err := db.Exec(sqlStr, newUser.name, newUser.age)
+	ret, err := db.Exec(sqlStr, newUser.Name, newUser.Age)
 	if err != nil { //执行sql语句报错
 		fmt.Println("插入失败,err", err)
 		return
